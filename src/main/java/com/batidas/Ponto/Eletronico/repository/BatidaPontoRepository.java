@@ -12,11 +12,6 @@ import java.util.Optional;
 
 @Repository
 public interface BatidaPontoRepository  extends JpaRepository<BatidaPonto, Long> {
-//
-//    @Query("SELECT bp FROM BatidaPonto bp WHERE day(bp.data) = day(?1) and month(bp.data) = month(?1) and year(bp.data) = year(?1) ORDER BY bp.data ASC")
-//    List<BatidaPonto> findByData(LocalDate data);
-//
-//    Optional<BatidaPonto> findOneByData(LocalDateTime data);
 
     @Query("SELECT m FROM BatidaPonto m WHERE day(m.dataHora) = day(?1) and month(m.dataHora) = month(?1) and year(m.dataHora) = year(?1) ORDER BY m.dataHora ASC")
     List<BatidaPonto> findByData(LocalDate dataHora);

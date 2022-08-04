@@ -1,6 +1,5 @@
 package com.batidas.Ponto.Eletronico.service;
 
-import com.batidas.Ponto.Eletronico.controller.BatidaPontoController;
 import com.batidas.Ponto.Eletronico.entity.BatidaPonto;
 import com.batidas.Ponto.Eletronico.repository.BatidaPontoRepository;
 import com.batidas.Ponto.Eletronico.util.BatidaPontoValidation;
