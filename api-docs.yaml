@@ -1,0 +1,69 @@
+openapi: 3.0.1
+info:
+  title: Controle de Ponto API
+  version: "1.0"
+servers:
+  - url: http://localhost:8080
+    description: Generated server url
+paths:
+  /batidas:
+    post:
+      tags:
+        - Batidas
+      summary: Bater ponto
+      description: Registrar um horário da jornada diária de trabalho
+      operationId: baterPonto
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Batidas'
+        required: true
+      responses:
+        "201":
+          description: Created
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Mensagem'
+              examples:
+                Data e hora em formato inválido:
+                  description: Data e hora em formato inválido
+                  value:
+                    mensagem: Data e hora em formato inválido
+                Campo obrigatório não informado:
+                  description: Campo obrigatório não informado
+                  value:
+                    mensagem: Campo obrigatório não informado
+        "409":
+          description: Conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Mensagem'
+              examples:
+                Horários já registrado:
+                  description: Horários já registrado
+                  value:
+                    mensagem: Horários já registrado
+        "403":
+          description: Forbiden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Mensagem'
+              examples:
+                apenas 4 horários por dia:
+                  description: apenas 4 horários por dia
+                  value:
+                    mensagem: Apenas 4 horários podem ser registrados por dia
+                mínimo 1 hora de almoço:
+                  description: mínimo 1 hora de almoço
+                  value:
+                    mensagem: Deve haver no mínimo 1 hora de almoço
+                sábado e domingo não são permitidos:
+                  description: sábado e domingo não são permitidos
+                  value:
+                    mensagem: Sábado e domingo não são permitidos como dia de trabalho
