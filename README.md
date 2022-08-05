@@ -53,12 +53,3 @@ Para inserção de uma data, recomendo utilizar uma API Client, tais como **Post
 > 
 > Postman no projeto "**Controle de Ponto API.postman_collection.json**"
 
-### Limpar, compilar, executar testes de unidade e cobertura, qualidade de código
-
-./gradlew clean Limpa os dados gerados pelo build do projeto, como o jar da aplicação.
-
-./gradlew build -x test Roda o build do projeto. O "-x test" é para não rodar os testes durante o build.
-
-./gradlew test Executa todos os testes do projeto.
-
-./gradlew sonarqube Executa a análise da qualidade do código, e a mesma ficará disponível no SonarCloud. Obs: é necessário as credendiais, mas o projeto possui essa step incluída na pipeline, então qualquer interação com o repositório será analisada pelo Sonar.
