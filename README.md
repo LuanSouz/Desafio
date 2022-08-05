@@ -23,7 +23,7 @@
 
 No terminal de sua preferência clone o projeto:
 ```
->git clone https://github.com/jhemysbarros/controle-ponto-api.git
+https://github.com/LuanSouz/Desafio.git
 ```
 
 Configurações dos projetos nas IDEs
