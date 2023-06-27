@@ -1,4 +1,4 @@
-<h1  align="center"> Backend | Ília</h1>  
+<h1  align="center"> Backend </h1>  
 
 ## Descrição do Projeto 
 
